@@ -1,0 +1,58 @@
+<div class="wrapper" *ngIf="cart$ | async as cart">
+  <header class="header">
+    <strong>Cart </strong>({{
+      cart.count === 1 ? cart.count + " item" : cart.count + " items"
+    }})
+  </header>
+
+  <main *ngIf="cart.count" class="main">
+  <div class="items shadow">
+  <div class="title">
+  <strong>
+   {{cart.count === 1 ? cart.count + " item" : cart.count + " items"}}
+  </strong>
+  </div>
+  <div class="arrival">
+  <strong>Arrives by Wed, Jan 24</strong>
+  </div>
+  <div class="content">
+    <ng-container *ngFor="let item of cart.items;">
+      <app-cart-item-card
+      [item]="item"
+      (itemQuantityUpdate)="onItemQuantityUpdate($event, item)"
+      (removeItem)="onRemoveItem(item.id )"></app-cart-item-card>
+    </ng-container>
+
+  </div>
+
+  </div>
+<aside class="total shadow">
+<button class="checkout" (click)="onCheckout()" >
+<strong>Continue to Checkout</strong>
+</button>
+<div class="subtotal value-pair">
+<div>
+<strong>Subtotal</strong>({{
+    cart.count === 1 ? cart.count + " item" : cart.count + " items"
+  }})
+</div>
+<div>${{ cart.total }}</div>
+</div>
+<div class="taxes value-pair">
+<div><strong>Taxes</strong></div>
+<div>Calculated at checkout</div>
+</div>
+<div class="estimated-total value-pair">
+<div><strong>Estimated Total</strong></div>
+<div class="estimated-total-value">
+<strong>${{ cart.total }}</strong>
+</div>
+</div>
+</aside>
+</main>
+  <ng-container *ngIf="cart.count===0">
+    <div class="cart-empty">Cart is Empty!</div>
+  </ng-container>
+</div>
+
+
