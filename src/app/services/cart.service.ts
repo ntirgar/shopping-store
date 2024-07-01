@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {BehaviorSubject} from 'rxjs';
 import {HttpClient} from "@angular/common/http";
+import {environment} from "../../environments/environment";
 
 @Injectable({
   providedIn: 'root',
@@ -74,7 +75,7 @@ export class CartService {
     const headers = {
       'Content-Type': 'application/json',
     };
-    return this.http.post('http://localhost:8000/api/create-checkout-session', body, {
+    return this.http.post(`${environment.API_SERVER}/api/create-checkout-session`, body, {
         headers: headers,
       });
   }
