@@ -1,9 +1,19 @@
-<div class="wrapper" *ngIf="product">
-  <img class="image" [src]="product.thumbUrl" [alt]="product.name" />
-  <div class="price">{{ product.price }}</div>
-  <div class="name">{{ product.name | truncate }}</div>
-  <button class="button link" (click)="onAdd()">
-    <span>+</span> Add
-  </button>
-</div>
+<mat-card class="product-card" *ngIf="product">
+  <img mat-card-image class="image" [src]="product.thumbUrl" [alt]="product.name" />
+  <mat-card-header>
+
+      <mat-card-title>{{ product.name | truncate }}</mat-card-title>
+      <mat-card-subtitle>${{ product.price }}</mat-card-subtitle>
+
+  </mat-card-header>
+  <mat-card-footer>
+    <mat-card-actions>
+      <button mat-flat-button color="accent" (click)="onAdd()">
+        <span>+</span> Add
+      </button>
+    </mat-card-actions>
+  </mat-card-footer>
+
+
+</mat-card>
 

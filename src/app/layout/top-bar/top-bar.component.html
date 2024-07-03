@@ -1,29 +1,34 @@
-<div class="wrapper">
-  <div class="brand-group" routerLink="/">
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <div class="brand-group" routerLink="/">
     <img src="assets/icons/menu.png" alt="" class="menu link" />
     <img src="assets/images/logo.png" alt="" class="logo link" />
     <div class="brand-name link">Shopping Store</div>
   </div>
-  <div class="search-group">
+    <div class="search-group">
     <input type="search" class="search-input" placeholder="Search" />
     <div class="search-icon-wrapper link">
       <img src="assets/icons/search.png" alt="" class="search-icon" />
     </div>
   </div>
-  <div class="user-group">
-    <img src="assets/icons/user.png" alt="" class="user-icon link" />
+    <div class="user-group">
+    <button mat-icon-button><mat-icon >account_circle</mat-icon></button>
     <div *ngIf=" cart$ | async as cart" class="cart" routerLink="/cart">
-      <img src="assets/icons/cart.png" alt="" class="cart-icon link" />
-      <span class="cart-count">{{ cart.count }}</span>
+      <mat-icon matBadge={{cart.count}} matBadgeColor="accent">
+shopping_cart
+      </mat-icon>
+
       <span class="cart-total">${{ cart.total | number : "1.2-2" }}</span>
     </div>
   </div>
-</div>
-<div class="mobile-wrapper">
-  <div class="search-group mobile">
-    <input type="search" class="search-input" placeholder="Search" />
-    <div class="search-icon-wrapper link">
-      <img src="assets/icons/search.png" alt="" class="search-icon" />
+  </mat-toolbar-row>
+  <mat-toolbar-row class="mobile">
+    <div class="search-group mobile">
+      <input type="search" class="search-input" placeholder="Search" />
+      <div class="search-icon-wrapper link">
+        <img src="assets/icons/search.png" alt="" class="search-icon" />
+      </div>
     </div>
-  </div>
-</div>
+  </mat-toolbar-row>
+</mat-toolbar>
+
