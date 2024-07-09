@@ -1,15 +1,19 @@
 <mat-toolbar color="primary">
   <mat-toolbar-row>
+
     <div class="brand-group" routerLink="/">
-    <img src="assets/icons/menu.png" alt="" class="menu link" />
-    <img src="assets/images/logo.png" alt="" class="logo link" />
-    <div class="brand-name link">Shopping Store</div>
+      <button mat-icon-button><mat-icon>menu</mat-icon></button>
+      <img src="assets/images/logo.png" alt="" class="logo link" />
+      <div class="brand-name link">Shopping Store</div>
+
+
   </div>
     <div class="search-group">
     <input type="search" class="search-input" placeholder="Search" />
-    <div class="search-icon-wrapper link">
-      <img src="assets/icons/search.png" alt="" class="search-icon" />
-    </div>
+    <span class="search-icon-wrapper link">
+      <mat-icon class="search-icon">search</mat-icon>
+     <!-- <img src="assets/icons/search.png" alt="" class="search-icon" /> -->
+    </span>
   </div>
     <div class="user-group">
     <button mat-icon-button><mat-icon >account_circle</mat-icon></button>
@@ -26,7 +30,8 @@ shopping_cart
     <div class="search-group mobile">
       <input type="search" class="search-input" placeholder="Search" />
       <div class="search-icon-wrapper link">
-        <img src="assets/icons/search.png" alt="" class="search-icon" />
+        <mat-icon class="search-icon">search</mat-icon>
+        <!-- <img src="assets/icons/search.png" alt="" class="search-icon" />-->
       </div>
     </div>
   </mat-toolbar-row>

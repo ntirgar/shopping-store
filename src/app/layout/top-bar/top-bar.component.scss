@@ -1,3 +1,6 @@
+:host{
+  --toolbar-radius: 16px;
+}
 mat-toolbar{
   position: fixed;
   z-index: 100;
@@ -31,16 +34,7 @@ mat-toolbar-row.mobile {
     gap: 20px;
   }
 }
-.menu {
-  width: 20px;
-  height: 100%;
-  object-fit: contain;
-  cursor: pointer;
-  margin-right: 10px;
-  @media (min-width: 760px) {
-    margin-right: 20px;
-  }
-}
+
 .logo {
   width: 42px;
   height: 100%;
@@ -105,21 +99,21 @@ mat-toolbar-row.mobile {
   }
 }
 .search-input {
-  border-top-left-radius: 30px;
-  border-bottom-left-radius: 30px;
+  border-top-left-radius: var(--toolbar-radius);
+  border-bottom-left-radius: var(--toolbar-radius);
   outline: none;
   border: none;
-  padding-left: 30px;
-  padding-right: 60px;
+  padding-left: var(--toolbar-radius);
+  padding-right: var(--toolbar-radius);
   height: var(--search-input-height);
   @media (min-width: 760px) {
     width: 600px;
   }
 }
 .search-icon-wrapper {
-  background-color: var(--accent-color);
-  border-top-right-radius: 30px;
-  border-bottom-right-radius: 30px;
+  background-color: var( --accent-color );
+  border-top-right-radius: var(--toolbar-radius);
+  border-bottom-right-radius: var(--toolbar-radius);
   height: var(--search-input-height);
   width: calc(var(--search-input-height) + 10px);
   margin-left: calc(-1 * var(--search-input-height) + 10px);
@@ -139,3 +133,4 @@ mat-toolbar-row.mobile {
     display: none;
   }
 }
+

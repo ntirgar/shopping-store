@@ -16,7 +16,7 @@ import {environment} from "../../../environments/environment";
 })
 export class CartComponent {
   cart$ = this.cartService.cart.asObservable();
-
+  today = new Date();
   constructor(private cartService: CartService ) {
   }
 

@@ -1,11 +1,13 @@
+
 :host {
+  --product-margin: 24px;
   width: 100%;
-  padding: 48px;
+  padding: var(--product-margin);
   background-color: #f3f3f3;
   display: grid;
   max-height: fit-content;
   grid-template-columns: auto;
-  gap: 48px;
+  gap: var(--product-margin);
   @media (min-width: 760px) {
     grid-template-columns: repeat(3, auto);
   }

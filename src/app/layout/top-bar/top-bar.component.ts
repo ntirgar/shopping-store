@@ -6,6 +6,7 @@ import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatIconModule} from "@angular/material/icon";
 import {MatButtonModule} from "@angular/material/button";
 import {MatBadgeModule} from "@angular/material/badge";
+import {MatInputModule} from "@angular/material/input";
 
 @Component({
   selector: 'app-top-bar',
@@ -17,7 +18,7 @@ import {MatBadgeModule} from "@angular/material/badge";
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
-    MatBadgeModule],
+    MatBadgeModule, MatInputModule],
   templateUrl: './top-bar.component.html',
   styleUrls: ['./top-bar.component.scss']
 })
